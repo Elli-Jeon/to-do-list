@@ -13,6 +13,11 @@ const GlobalStyle = createGlobalStyle`
         font-size : 62.5%;
     }
 
+    body {
+        max-width : 1440px;
+        margin : 0 auto;
+    }
+
     ${()=>{
         return css`
 
