@@ -8,15 +8,23 @@ const DisplayAreaStyle = styled.div`
     min-height: 70%;
     color : white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 `;
 
 const Todo = styled.div`
-    color : white;
-    background-color: black;
-    width : 100px;
-    height : 100px;
+    margin : 0.2rem;
+    color : black;
+    min-width : 10rem;
+    min-height : 1rem;
+    border : 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & h2 {
+        margin : 0.5rem;
+    }
 `;
 
 const DisplayArea = { DisplayAreaStyle, Todo }

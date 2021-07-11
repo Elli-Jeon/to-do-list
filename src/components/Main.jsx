@@ -36,12 +36,11 @@ const Main = ({ dispatch, todos }) => {
     return (
         <MainStyle>
             <DisplayAreaStyle>
-                {console.log("todos",todos)}
                 {todos.map((todo)=>{
                     return (
                     <Todo key={todo.id}>
-                        Todo : {todo.todo}
-                        Priority : {todo.priority}
+                        <h2>{todo.priority}</h2> 
+                        <p>{todo.todo}</p>
                     </Todo>
                     )
                 })}
