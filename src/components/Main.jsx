@@ -6,7 +6,7 @@ import DisplayArea from '../styles/DisplayArea-style'
 import AddStyle from '../styles/AddArea-style'
 
 // ACTIONS
-import ACTIONS from '../App';
+import {ACTIONS} from '../App';
 
 const { DisplayAreaStyle, Todo } = DisplayArea;
 const { AddAreaStyle, AddInput, PriorityInput, AddButton } = AddStyle;
@@ -28,7 +28,7 @@ const Main = ({ dispatch, todos }) => {
     // todo를 위로 올려 줌. 
     const todoSubmit = (e) => {
         e.preventDefault();
-        dispatch({ type : ACTIONS.TODO_SUBMIT, payload  : {todo, priority} });
+        dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority }});
         setTodo('');
         setPriority(0);
     }
@@ -37,8 +37,13 @@ const Main = ({ dispatch, todos }) => {
         <MainStyle>
             <DisplayAreaStyle>
                 {console.log("todos",todos)}
-                {todos.map(()=>{
-                    <Todo key={todos.id} />
+                {todos.map((todo)=>{
+                    return (
+                    <Todo key={todo.id}>
+                        Todo : {todo.todo}
+                        Priority : {todo.priority}
+                    </Todo>
+                    )
                 })}
             </DisplayAreaStyle>
             <AddAreaStyle>
@@ -52,4 +57,4 @@ const Main = ({ dispatch, todos }) => {
     )
 }
 
-export default Main;
+export default React.memo(Main);
