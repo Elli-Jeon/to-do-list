@@ -12,4 +12,12 @@ const DisplayAreaStyle = styled.div`
     align-items: center;
 `;
 
-export default DisplayAreaStyle;
+const Todo = styled.div`
+    color : white;
+    width : 100px;
+    height : 100px;
+`;
+
+const DisplayArea = { DisplayAreaStyle, Todo }
+
+export default DisplayArea;
