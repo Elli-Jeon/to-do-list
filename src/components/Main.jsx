@@ -3,7 +3,7 @@ import MainStyle from '../styles/Main-style'
 
 // Components
 import DisplayAreaStyle from '../styles/DisplayArea-style'
-import ListAreaStyle from '../styles/ListArea-style'
+import AddAreaStyle from '../styles/ListArea-style'
 
 
 const Main = () => {
@@ -12,9 +12,9 @@ const Main = () => {
             <DisplayAreaStyle>
                 displayArea
             </DisplayAreaStyle>
-            <ListAreaStyle>
-                listArea
-            </ListAreaStyle>
+            <AddAreaStyle>
+                addArea
+            </AddAreaStyle>
         </MainStyle>
     )
 }

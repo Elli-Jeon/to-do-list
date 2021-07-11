@@ -5,7 +5,7 @@ const DisplayAreaStyle = styled.div`
     top : 3rem;
     background-color : black;
     min-width : 80%;
-    min-height: 50%;
+    min-height: 70%;
     color : white;
     display: flex;
     justify-content: center;

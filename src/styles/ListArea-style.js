@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-const ListAreaStyle = styled.div`
+const AddAreaStyle = styled.div`
     position: absolute;
-    top : 60%;
+    top : 80%;
     min-width : 60%;
-    min-height: 70%;
+    min-height: 50%;
     background-color: green;
     display: flex;
     justify-content: center;
     align-items: center;
 `;
 
-export default ListAreaStyle;
+export default AddAreaStyle;
