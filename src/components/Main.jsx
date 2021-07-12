@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import MainStyle from '../styles/Main-style'
 
 // Components
@@ -7,11 +7,16 @@ import AddStyle from '../styles/AddArea-style'
 
 // ACTIONS
 import {ACTIONS} from '../context/actions'
+import { TodoContext } from '../context/todo-context'
 
 const { DisplayAreaStyle, Todo } = DisplayArea;
 const { AddAreaStyle, AddInput, PriorityInput, AddButton } = AddStyle;
 
-const Main = ({ dispatch, todos }) => {
+const Main = () => {
+
+    const context = useContext(TodoContext);
+    console.log(context);
+    
     const [ todo, setTodo ] = useState("");
     const [ priority, setPriority ] = useState(0);
 
@@ -28,7 +33,7 @@ const Main = ({ dispatch, todos }) => {
     // todo를 위로 올려 줌. 
     const todoSubmit = (e) => {
         e.preventDefault();
-        dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority }});
+        context.dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority }});
         setTodo('');
         setPriority(0);
     }
@@ -36,7 +41,7 @@ const Main = ({ dispatch, todos }) => {
     return (
         <MainStyle>
             <DisplayAreaStyle>
-                {todos.map((todo)=>{
+                {context.state.todos.map((todo)=>{
                     return (
                     <Todo key={todo.id}>
                         <h2>{todo.priority}</h2> 
