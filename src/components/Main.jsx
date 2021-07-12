@@ -6,7 +6,7 @@ import DisplayArea from '../styles/DisplayArea-style'
 import AddStyle from '../styles/AddArea-style'
 
 // ACTIONS
-import {ACTIONS} from '../App';
+import {ACTIONS} from '../context/actions'
 
 const { DisplayAreaStyle, Todo } = DisplayArea;
 const { AddAreaStyle, AddInput, PriorityInput, AddButton } = AddStyle;
@@ -50,7 +50,7 @@ const Main = ({ dispatch, todos }) => {
                 <AddInput onChange={addTodoValue} value={todo} />
                 우선 순위를 설정해주세요!
                 <PriorityInput onChange={addPriorityValue} value={priority}/>
-                <AddButton onClick={todoSubmit}>Hi!</AddButton>
+                <AddButton onClick={todoSubmit}>Add</AddButton>
             </AddAreaStyle>
         </MainStyle>
     )
