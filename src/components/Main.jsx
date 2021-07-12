@@ -4,18 +4,20 @@ import MainStyle from '../styles/Main-style'
 // Components
 import DisplayArea from '../styles/DisplayArea-style'
 import AddStyle from '../styles/AddArea-style'
+import Todo from './Todo'
+
 
 // ACTIONS
 import {ACTIONS} from '../context/actions'
 import { TodoContext } from '../context/todo-context'
 
-const { DisplayAreaStyle, Todo } = DisplayArea;
+const { DisplayAreaStyle, TodoItem } = DisplayArea;
 const { AddAreaStyle, AddInput, PriorityInput, AddButton } = AddStyle;
 
 const Main = () => {
 
     const context = useContext(TodoContext);
-    console.log(context);
+    //console.log(context);
     
     const [ todo, setTodo ] = useState("");
     const [ priority, setPriority ] = useState(0);
@@ -38,15 +40,13 @@ const Main = () => {
         setPriority(0);
     }
 
+
     return (
         <MainStyle>
             <DisplayAreaStyle>
-                {context.state.todos.map((todo)=>{
+                {context.state.todos.map((eachTodo)=>{
                     return (
-                    <Todo key={todo.id}>
-                        <h2>{todo.priority}</h2> 
-                        <p>{todo.todo}</p>
-                    </Todo>
+                    <Todo key={eachTodo.id} todo={eachTodo} />
                     )
                 })}
             </DisplayAreaStyle>

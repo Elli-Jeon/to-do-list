@@ -1,4 +1,4 @@
 export const ACTIONS = {
     TODO_SUBMIT : 'todoSubmit',
-    EXAM : 'exam'
+    TODO_DELETE : 'todoDelete',
 }

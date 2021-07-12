@@ -13,7 +13,7 @@ const DisplayAreaStyle = styled.div`
     align-items: center;
 `;
 
-const Todo = styled.div`
+const TodoItem = styled.div`
     margin : 0.2rem;
     color : black;
     min-width : 10rem;
@@ -27,6 +27,6 @@ const Todo = styled.div`
     }
 `;
 
-const DisplayArea = { DisplayAreaStyle, Todo }
+const DisplayArea = { DisplayAreaStyle, TodoItem }
 
 export default DisplayArea;
