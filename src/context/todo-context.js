@@ -8,9 +8,9 @@ export const initialValue = {
             todo : "React 공부",
             priority : 1,
             dueDate : {
-                year : 2021,
-                month : 10,
                 day : 1,
+                month : 10,
+                year : 2021,
             },
         }
     ]
