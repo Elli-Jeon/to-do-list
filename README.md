@@ -146,3 +146,5 @@ react를 통해서 to-do-list를 만들었고, Styled-components는 좀 더 깔�
 |:---|:---|
 |1. **큰 그림의 부재** : 큰 그림이 없다보니 어떤 컴포넌트, 어떤 페이지가 필요한지 몰랐기에 중구난방식으로 기능 추가|Figma를 사용해서 어떤 식으로 화면 구성을 할지 정해 필요한 page와 component, 전역 상태를 구상하기|
 |2. **폴더 구조화** : components라고 명명한 폴더에 들어간 파일들을 살펴보면 '기능'과 '모습'이 혼재되었음. [pages] 폴더와 [components]폴더를 만들어서 각각 화면(페이지)와 기능을 가진 최소한의 단위 모음 용으로 사용해야 함.|유튜브에 react folder structuring을 검색해서 공부|
+|3. **branch관리에 더 신경쓰자** : 개발 총괄에 develop 두고 기능 별로 "feature/featureName"써서 구현 후에 pull request, merge 후 삭제|<a href="https://github.com/LM-channel-team-project/Team-Auto-Matcher" target="_blank">라매개발자 님 협업</a>|
+|4. **컴포넌트 재사용성 신경 쓰자** : page는 레고 조립 장소. 레고는 styled.components로 공급받고, 재사용 가능한 것들은 components로, 이 역시 styled.components로 부품을 공급받는다.|
