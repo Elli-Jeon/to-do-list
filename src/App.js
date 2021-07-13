@@ -10,7 +10,6 @@ import MainTodo from './components/MainTodo';
 import MainCalendar from "./components/MainCalendar";
 import GlobalState from './context/GlobalState';
 
-
 const App = () => {
    
     return (

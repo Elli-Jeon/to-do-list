@@ -11,6 +11,11 @@ import Todo from './Todo'
 import {ACTIONS} from '../context/actions'
 import { TodoContext } from '../context/todo-context'
 
+// Date Picker
+import 'react-modern-calendar-datepicker/lib/DatePicker.css';
+import DatePicker from 'react-modern-calendar-datepicker';
+
+
 const { DisplayAreaStyle, TodoItem } = DisplayArea;
 const { AddAreaStyle, AddInput, PriorityInput, AddButton } = AddStyle;
 
@@ -21,6 +26,7 @@ const MainTodo = () => {
     
     const [ todo, setTodo ] = useState("");
     const [ priority, setPriority ] = useState(0);
+    const [ selectedDay, setSelectedDay] = useState(null);
 
     // AddInput의 input의 값을 todo에 저장
     const addTodoValue = (e) => {
@@ -35,7 +41,7 @@ const MainTodo = () => {
     // todo를 위로 올려 줌. 
     const todoSubmit = (e) => {
         e.preventDefault();
-        context.dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority }});
+        context.dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority, selectedDay }});
         setTodo('');
         setPriority(0);
     }
@@ -55,8 +61,14 @@ const MainTodo = () => {
                 <AddInput onChange={addTodoValue} value={todo} />
                 우선 순위를 설정해주세요!
                 <PriorityInput onChange={addPriorityValue} value={priority}/>
+                <DatePicker 
+                    value={selectedDay} 
+                    onChange={setSelectedDay} 
+                    inputPlaceholder="Select a day"
+                    shouldHighlightWeekends/>
                 <AddButton onClick={todoSubmit}>Add</AddButton>
             </AddAreaStyle>
+
         </MainStyle>
     )
 }

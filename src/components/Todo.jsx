@@ -22,6 +22,7 @@ const Todo = ({todo}) => {
         <TodoItem>
             <h2>{todo.priority}</h2> 
             <p>{todo.todo}</p>
+            <p>{`${todo.dueDate.year} / ${todo.dueDate.month} / ${todo.dueDate.day}`}</p>
             <button onClick={todoDelete}>삭제</button>
         </TodoItem>
     )
