@@ -3,9 +3,9 @@ import styled from "styled-components";
 // Area 자체 CSS
 const AddAreaStyle = styled.form`
     position: absolute;
-    top : 80%;
+    top : 70%;
     min-width : 60%;
-    min-height: 50%;
+    min-height: 45%;
     border : 1px solid black;
     display: flex;
     flex-direction: column;

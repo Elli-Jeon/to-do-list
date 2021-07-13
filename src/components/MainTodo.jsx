@@ -14,7 +14,7 @@ import { TodoContext } from '../context/todo-context'
 const { DisplayAreaStyle, TodoItem } = DisplayArea;
 const { AddAreaStyle, AddInput, PriorityInput, AddButton } = AddStyle;
 
-const Main = () => {
+const MainTodo = () => {
 
     const context = useContext(TodoContext);
     //console.log(context);
@@ -61,4 +61,4 @@ const Main = () => {
     )
 }
 
-export default React.memo(Main);
+export default React.memo(MainTodo);

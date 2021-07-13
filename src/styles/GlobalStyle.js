@@ -9,6 +9,10 @@ const GlobalStyle = createGlobalStyle`
         text-decoration : none;
     }
 
+    a {
+        color : black;
+    }
+
     html {
         font-size : 62.5%;
         min-width : 440px;
