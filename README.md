@@ -132,3 +132,17 @@ react를 통해서 to-do-list를 만들었고, Styled-components는 좀 더 깔�
 ![selectday](https://user-images.githubusercontent.com/68575268/125436353-eec142f0-825c-464d-b594-4294846a8280.png)
 
 - 등록한 날짜에 맞추어서 해당 날짜 클릭 시 그날 할일이 표시
+
+## 6. 배운 점 및 보완할 점
+---
+|배운 점 | 참조 파일
+|:---|:---|
+|1. **Context API를 통한 상태의 전역관리** : <code><Context.Provider value={}></code>로 감싸고 그 내부에 <code>{props.children}</code>으로 내부 컴포넌트 관리. 사용하려는 컴포넌트에서  <code>useContext</code>로 직접 받아오기  |Context>GlovalState.js, >todo-context.js|
+|2. **useReducer를 사용한 상태 관리** : 컴포넌트 밖에서 상태를 관리하는 방법. <code>reducer (state,action)</code>을 밖에, <code>const[state, dispatch] = useReducer(reducer, initValue)</code>를 컴포넌트 안쪽에. 컴포넌트 안쪽의 <code>dispatch({type:00})</code>이 컴포넌트 밖 reducer의 action을 건들여 state의 변화 유도|Context>action.js, >reducers.js|
+|3. **폴더 Structuring과 Styled-Components** : Styled-Components를 활용해서 컴포넌트를 생성해 export시킴으로 컴포넌트를 분리시키고, 폴더를 어떻게 구조화시키는지 배움| Styles, Components
+|4. **github wiki와 issues 사용법**||
+
+|보완할 점|보완 방법
+|:---|:---|
+|1. **큰 그림의 부재** : 큰 그림이 없다보니 어떤 컴포넌트, 어떤 페이지가 필요한지 몰랐기에 중구난방식으로 기능 추가|Figma를 사용해서 어떤 식으로 화면 구성을 할지 정해 필요한 page와 component, 전역 상태를 구상하기|
+|2. **폴더 구조화** : components라고 명명한 폴더에 들어간 파일들을 살펴보면 '기능'과 '모습'이 혼재되었음. [pages] 폴더와 [components]폴더를 만들어서 각각 화면(페이지)와 기능을 가진 최소한의 단위 모음 용으로 사용해야 함.|유튜브에 react folder structuring을 검색해서 공부|
