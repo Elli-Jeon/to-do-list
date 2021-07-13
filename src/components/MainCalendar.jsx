@@ -28,7 +28,7 @@ const MainCalendar = () => {
             />
             <SelectedDayTodoArea>
                 {context.state.todos.map((eachTodo)=>{
-                    if(selectedDay.year === eachTodo.dueDate.year && selectedDay.month === eachTodo.dueDate.month && selectedDay.day === eachTodo.dueDate.day){
+                    if(selectedDay !== null && selectedDay.year === eachTodo.dueDate.year && selectedDay.month === eachTodo.dueDate.month && selectedDay.day === eachTodo.dueDate.day){
                         return <Todo key={eachTodo.id} todo={eachTodo} />
                     }
                 })}
