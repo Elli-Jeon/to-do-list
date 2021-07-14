@@ -67,6 +67,7 @@ const TodoItem = styled.div`
     & p {
         font-size : 2rem;
     }
+    
     ${(props) => {
         if(props.className === 'deleted'){
             return css`
