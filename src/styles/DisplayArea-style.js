@@ -30,6 +30,14 @@ const CheckPriorityButton = styled.button`
     width : 10rem;
     padding : 1rem;
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    background: none;
+    border: 4px solid #4527a0;
+    font-weight: 900;
+    font-size: 1.5rem;
+    &:hover {
+        transform-origin: top right;
+        transform: rotate(-25deg);
+    }
 `;
 
 const TodoDeleteFade = keyframes`
@@ -81,7 +89,7 @@ const TodoItem = styled.div`
                 background: linear-gradient(#ffeb3b, #fdd835);
             `;
         }
-    }} 
+    }}
     &::after{
         content : "";
         position: absolute;
@@ -106,11 +114,16 @@ const TodoItem = styled.div`
         padding : 0.2rem;
         margin : 0.2rem 0;
         background-color: white;
+        font-weight: 700;
+        font-size : 1.5rem;
         &::after{
             content : "";
             background-color: black;
             width : 50%;
             height : 50%;
+        }
+        &:hover {
+            transform: scale(1.1);
         }
     }
     ${(props) => {
