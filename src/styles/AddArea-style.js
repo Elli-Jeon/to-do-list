@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 // Area 자체 CSS
 const AddAreaStyle = styled.form`
     position: absolute;
