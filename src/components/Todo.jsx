@@ -31,7 +31,7 @@ const Todo = ({todo}) => {
                 context.dispatch({type : ACTIONS.TODO_DELETE, payload : { todo }});
                 
                 return () => setDeleted(false); // cleanUp을 함수로 걸어주었기(비동기) 때문에, 사라진 컴포넌트의 deleted를 참조하지 않게 되어서 에러 해결
-            },3000) 
+            },3200) 
         }
     },[deleted]); // context, todo를 넣어버리면 context, todo가 변하기만 해도 삭제 작업 실행
 
@@ -64,8 +64,8 @@ const Todo = ({todo}) => {
             {edit? (<input placeholder={todo.todo} onChange={todoEdit}/>) : (<p>{todo.todo}</p>)}
             
             <p>{`${todo.dueDate.year} / ${todo.dueDate.month} / ${todo.dueDate.day}`}</p>
-            <button onClick={todoDelete}>삭제</button>
             {edit ? (<button onClick={todoEditSubmit}>적용</button>) : (<button onClick={todoEditSubmit}>수정</button>) }
+            <button onClick={todoDelete}>삭제</button>
         </TodoItem>
     )
 }

@@ -1,6 +1,10 @@
 import styled, { keyframes, css } from "styled-components";
 import corkBoard from "../assets/images/corkBoard.jpg"
 
+import pin from "../assets/images/pin.png"
+import realpin from "../assets/images/real-pin.png"
+
+
 const DisplayAreaStyle = styled.div`
     position : absolute;
     top : 3rem;
@@ -30,14 +34,33 @@ const TodoDeleteFade = keyframes`
         transform : scale(1.0) rotate(0deg);
     }
     to {
-        transform : scale(0.1) rotate(360deg);
+        transform : scale(0) rotate(360deg) translate(500%,800%);
     }
+`;
 
+const pinDeleteFade = keyframes`
+    0%{
+        transform: translate(50%,-70%);
+    }
+    50%{
+        transform: translate(50%,-100%);
+    }
+    100% {
+        transform: scale(0);
+        
+    }
 `;
 
 const TodoItem = styled.div`
+    position: relative;
     margin : 0.8rem;
     color : black;
+    min-width : 10rem;
+    min-height : 1rem;
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    padding : 0.5rem;
     ${({color})=>{
         if(color === "red"){
             return css`
@@ -53,12 +76,17 @@ const TodoItem = styled.div`
             `;
         }
     }} 
-    min-width : 10rem;
-    min-height : 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding : 0.5rem;
+    &::after{
+        content : "";
+        position: absolute;
+        top : 0;
+        transform: translate(50%,-70%);
+        //background: url(${pin}) center;
+        background: url(${realpin}) center no-repeat;
+        background-size: contain;
+        width : 70px;
+        height: 70px;
+    }
     & h2 {
         margin : 0.5rem;
         font-size : 3rem;
@@ -67,11 +95,26 @@ const TodoItem = styled.div`
     & p {
         font-size : 2rem;
     }
-    
+    & button {
+        display: inline;
+        background : none;
+        padding : 0.2rem;
+        margin : 0.2rem 0;
+        background-color: white;
+        &::after{
+            content : "";
+            background-color: black;
+            width : 50%;
+            height : 50%;
+        }
+    }
     ${(props) => {
         if(props.className === 'deleted'){
             return css`
-            animation: ${TodoDeleteFade} 2.5s linear;
+            animation: ${TodoDeleteFade} 1s 2.2s;
+            &::after{
+                animation: ${pinDeleteFade} 3.2s ;
+            }
         `}
         }
     };

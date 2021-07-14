@@ -7,6 +7,7 @@ const MainStyle = styled.main`
     align-items: center;
     min-height: 70vh;
     position: relative;
+
 `;
 
 export default MainStyle;
