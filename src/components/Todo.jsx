@@ -66,7 +66,6 @@ const Todo = ({todo}) => {
             <p>{`${todo.dueDate.year} / ${todo.dueDate.month} / ${todo.dueDate.day}`}</p>
             <button onClick={todoDelete}>삭제</button>
             {edit ? (<button onClick={todoEditSubmit}>적용</button>) : (<button onClick={todoEditSubmit}>수정</button>) }
-            
         </TodoItem>
     )
 }
