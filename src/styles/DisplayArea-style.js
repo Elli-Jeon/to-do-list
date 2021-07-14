@@ -45,9 +45,11 @@ const pinDeleteFade = keyframes`
     50%{
         transform: translate(50%,-100%);
     }
+    60%{
+        transform: scale(0);
+    }
     100% {
         transform: scale(0);
-        
     }
 `;
 
@@ -111,9 +113,9 @@ const TodoItem = styled.div`
     ${(props) => {
         if(props.className === 'deleted'){
             return css`
-            animation: ${TodoDeleteFade} 1s 2.2s;
+            animation: ${TodoDeleteFade} 1.3s 1.2s;
             &::after{
-                animation: ${pinDeleteFade} 3.2s ;
+                animation: ${pinDeleteFade} 2.2s ;
             }
         `}
         }
