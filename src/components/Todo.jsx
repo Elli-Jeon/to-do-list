@@ -9,7 +9,7 @@ import DisplayArea from '../styles/DisplayArea-style';
 const { DisplayAreaStyle, TodoItem } = DisplayArea;
 
 const Todo = ({todo}) => {
-    console.log(todo);
+    //console.log(todo);
     const context = useContext(TodoContext);
     const [ edit, setEdit ] = useState(false);
     const [ newTodo, SetNewTodo ] = useState();

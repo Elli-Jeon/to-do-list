@@ -16,7 +16,7 @@ import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import DatePicker from 'react-modern-calendar-datepicker';
 
 
-const { DisplayAreaStyle, TodoItem } = DisplayArea;
+const { DisplayAreaStyle, CheckPriorityButton } = DisplayArea;
 const { AddAreaStyle, AddInput, PriorityInput, AddButton } = AddStyle;
 
 const MainTodo = () => {
@@ -25,17 +25,12 @@ const MainTodo = () => {
     //console.log(context);
     
     const [ todo, setTodo ] = useState("");
-    const [ priority, setPriority ] = useState(0);
+    const [ priority, setPriority ] = useState("Check now!");
     const [ selectedDay, setSelectedDay] = useState(null);
 
     // AddInput의 input의 값을 todo에 저장
     const addTodoValue = (e) => {
         setTodo(e.target.value);
-    }
-
-    // PriorityInput의 input 값을 priority에 저장
-    const addPriorityValue = (e) => {
-        setPriority(e.target.value);
     }
 
     // todo를 위로 올려 줌. 
@@ -44,6 +39,11 @@ const MainTodo = () => {
         context.dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority, selectedDay }});
         setTodo('');
         setPriority(0);
+    }
+
+    const checkPriority = (e) => {
+        e.preventDefault();
+        context.dispatch({type : ACTIONS.TODO_CHECK_PRIORITY})
     }
 
 
@@ -55,12 +55,12 @@ const MainTodo = () => {
                     <Todo key={eachTodo.id} todo={eachTodo} />
                     )
                 })}
+                <CheckPriorityButton onClick={checkPriority}>Check Priority</CheckPriorityButton>
             </DisplayAreaStyle>
             <AddAreaStyle>
                 할 일을 적어주세요!
                 <AddInput onChange={addTodoValue} value={todo} />
-                우선 순위를 설정해주세요!
-                <PriorityInput onChange={addPriorityValue} value={priority}/>
+                마감 일을 설정해주세요!
                 <DatePicker 
                     value={selectedDay} 
                     onChange={setSelectedDay} 

@@ -13,13 +13,14 @@ const DisplayAreaStyle = styled.div`
     align-items: center;
 `;
 
-/* 이게 왜 안되징
-const calculateRotate = (num) => {
-    return css`
-        transform : rotate(${num})
-    `;
-}
-*/
+const CheckPriorityButton = styled.button`
+    position : absolute;
+    top : 1rem;
+    right : 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
 
 const TodoDeleteFade = keyframes`
     from {
@@ -52,6 +53,6 @@ const TodoItem = styled.div`
     };
 `;
 
-const DisplayArea = { DisplayAreaStyle, TodoItem }
+const DisplayArea = { DisplayAreaStyle, TodoItem, CheckPriorityButton }
 
 export default DisplayArea;
