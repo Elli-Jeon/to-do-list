@@ -27,6 +27,9 @@ const CheckPriorityButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    width : 10rem;
+    padding : 1rem;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
 `;
 
 const TodoDeleteFade = keyframes`
@@ -63,6 +66,7 @@ const TodoItem = styled.div`
     flex-direction: column;
     //align-items: center;
     padding : 0.5rem;
+    box-shadow: 4px 4px 4px black;
     ${({color})=>{
         if(color === "red"){
             return css`
@@ -82,10 +86,10 @@ const TodoItem = styled.div`
         content : "";
         position: absolute;
         top : 0;
-        transform: translate(50%,-70%);
+        transform: translate(55%,-70%);
         //background: url(${pin}) center;
-        background: url(${realpin}) center no-repeat;
-        background-size: contain;
+        background: url(${realpin}) top no-repeat;
+        background-size: 80%;
         width : 70px;
         height: 70px;
     }
@@ -98,7 +102,6 @@ const TodoItem = styled.div`
         font-size : 2rem;
     }
     & button {
-        display: inline;
         background : none;
         padding : 0.2rem;
         margin : 0.2rem 0;
