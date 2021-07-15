@@ -16,8 +16,8 @@ import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import DatePicker from 'react-modern-calendar-datepicker';
 
 
-const { DisplayAreaStyle, CheckPriorityButton } = DisplayArea;
-const { AddAreaStyle, AddInput, PriorityInput, AddButton } = AddStyle;
+const { DisplayAreaStyle, CheckPriorityButton, Reference } = DisplayArea;
+const { AddAreaStyle, AddInput, AddButton } = AddStyle;
 
 const MainTodo = () => {
 
@@ -68,7 +68,9 @@ const MainTodo = () => {
                     shouldHighlightWeekends/>
                 <AddButton onClick={todoSubmit}>Add</AddButton>
             </AddAreaStyle>
-
+            <Reference>
+                <a target="_blank" href="https://icons8.com/icon/mrLvzJucXKo2/calculate">Calculate</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+            </Reference>
         </MainStyle>
     )
 }

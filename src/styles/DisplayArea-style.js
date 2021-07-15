@@ -3,6 +3,7 @@ import corkBoard from "../assets/images/corkBoard.jpg"
 
 import pin from "../assets/images/pin.png"
 import realpin from "../assets/images/real-pin.png"
+import calculator from "../assets/images/calculator.png"
 
 
 const DisplayAreaStyle = styled.div`
@@ -23,21 +24,24 @@ const DisplayAreaStyle = styled.div`
 const CheckPriorityButton = styled.button`
     position : absolute;
     top : 1rem;
-    right : 1rem;
+    right : 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     width : 10rem;
     padding : 1rem;
-    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    background: none;
-    border: 4px solid #4527a0;
+    background: url(${calculator}) center no-repeat;
+    background-size: contain;
+    border : none;
+    color : #e53935;
+    /* border: 4px solid #4527a0; */
+    outline: none;
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 2rem;
     &:hover {
-        transform-origin: top right;
         transform: rotate(-25deg);
     }
+
 `;
 
 const TodoDeleteFade = keyframes`
@@ -51,10 +55,10 @@ const TodoDeleteFade = keyframes`
 
 const pinDeleteFade = keyframes`
     0%{
-        transform: translate(50%,-70%);
+        transform: translate(55%,-70%);
     }
     50%{
-        transform: translate(50%,-100%);
+        transform: translate(55%,-100%);
     }
     60%{
         transform: scale(0);
@@ -138,6 +142,15 @@ const TodoItem = styled.div`
     };
 `;
 
-const DisplayArea = { DisplayAreaStyle, TodoItem, CheckPriorityButton }
+const Reference = styled.div`
+    position: absolute;
+    top : 85vh;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+`;
+
+const DisplayArea = { DisplayAreaStyle, TodoItem, CheckPriorityButton, Reference }
 
 export default DisplayArea;
