@@ -15,9 +15,12 @@ import { TodoContext } from '../context/todo-context'
 import 'react-modern-calendar-datepicker/lib/DatePicker.css';
 import DatePicker from 'react-modern-calendar-datepicker';
 
+// image
+import memo from "../assets/images/memo.png"
+
 
 const { DisplayAreaStyle, CheckPriorityButton, Reference } = DisplayArea;
-const { AddAreaStyle, AddInput, AddButton } = AddStyle;
+const { AddAreaStyle, AddInput, AddButton, AddAreaForm } = AddStyle;
 
 const MainTodo = () => {
 
@@ -58,18 +61,23 @@ const MainTodo = () => {
                 <CheckPriorityButton onClick={checkPriority}>Check Priority</CheckPriorityButton>
             </DisplayAreaStyle>
             <AddAreaStyle>
-                할 일을 적어주세요!
-                <AddInput onChange={addTodoValue} value={todo} />
-                마감 일을 설정해주세요!
-                <DatePicker 
-                    value={selectedDay} 
-                    onChange={setSelectedDay} 
-                    inputPlaceholder="Select a day"
-                    shouldHighlightWeekends/>
-                <AddButton onClick={todoSubmit}>Add</AddButton>
+                <AddAreaForm>
+                    <img src={memo} alt="memo"/>
+                    <label>할 일을 적어주세요!</label>
+                    <AddInput onChange={addTodoValue} value={todo}/>
+                    <label>마감 일을 설정해주세요!</label>
+                    <DatePicker 
+                        value={selectedDay} 
+                        onChange={setSelectedDay} 
+                        inputPlaceholder="Select due Date"
+                        shouldHighlightWeekends/>
+                    <AddButton onClick={todoSubmit}>Add</AddButton>
+                </AddAreaForm>
             </AddAreaStyle>
             <Reference>
-                <a target="_blank" href="https://icons8.com/icon/mrLvzJucXKo2/calculate">Calculate</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                <a target="_blank" href="https://icons8.com/icon/mrLvzJucXKo2/calculate">Calculate</a> icon by <a target="_blank" href="https://icons8.com">Icons8  </a>
+                <a target="_blank" href="https://icons8.com/icon/9i9HlS0bGONj/pencil">Pencil</a> icon by <a target="_blank" href="https://icons8.com">Icons8  </a>
+                <a target="_blank" href="https://icons8.com/icon/MbRthDvtoWcb/memo">Memo</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
             </Reference>
         </MainStyle>
     )

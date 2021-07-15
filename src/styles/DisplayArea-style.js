@@ -34,7 +34,6 @@ const CheckPriorityButton = styled.button`
     background-size: contain;
     border : none;
     color : #e53935;
-    /* border: 4px solid #4527a0; */
     outline: none;
     font-weight: 900;
     font-size: 2rem;

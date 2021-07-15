@@ -9,10 +9,6 @@ const GlobalStyle = createGlobalStyle`
         text-decoration : none;
     }
 
-    a {
-        color : black;
-    }
-
     html {
         font-size : 62.5%;
         min-width : 440px;
@@ -21,6 +17,14 @@ const GlobalStyle = createGlobalStyle`
     body {
         max-width : 1440px;
         margin : 0 auto;
+    }
+
+    a {
+        color : black;
+    }
+
+    button {
+        cursor : pointer
     }
 
     ${()=>{
