@@ -12,12 +12,10 @@ import {ACTIONS} from '../context/actions'
 import { TodoContext } from '../context/todo-context'
 
 // Date Picker
-import 'react-modern-calendar-datepicker/lib/DatePicker.css';
-import DatePicker from 'react-modern-calendar-datepicker';
+import CustomDate from "./CustomDate"
 
 // image
 import memo from "../assets/images/memo.png"
-
 
 const { DisplayAreaStyle, CheckPriorityButton, Reference } = DisplayArea;
 const { AddAreaStyle, AddInput, AddButton, AddAreaForm } = AddStyle;
@@ -36,12 +34,17 @@ const MainTodo = () => {
         setTodo(e.target.value);
     }
 
+    // 자식 datepicker에게 줄 함수
+    const changeSelectedDay = (day) => {
+        setSelectedDay(day);
+    }
+
     // todo를 위로 올려 줌. 
     const todoSubmit = (e) => {
         e.preventDefault();
         context.dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority, selectedDay }});
         setTodo('');
-        setPriority(0);
+        setPriority("Check Now!");
     }
 
     const checkPriority = (e) => {
@@ -66,11 +69,8 @@ const MainTodo = () => {
                     <label>할 일을 적어주세요!</label>
                     <AddInput onChange={addTodoValue} value={todo}/>
                     <label>마감 일을 설정해주세요!</label>
-                    <DatePicker 
-                        value={selectedDay} 
-                        onChange={setSelectedDay} 
-                        inputPlaceholder="Select due Date"
-                        shouldHighlightWeekends/>
+                    <CustomDate onChange={setSelectedDay} changeSelectedDay={changeSelectedDay}/>
+                    {console.log(selectedDay)}
                     <AddButton onClick={todoSubmit}>Add</AddButton>
                 </AddAreaForm>
             </AddAreaStyle>

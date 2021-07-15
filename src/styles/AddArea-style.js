@@ -9,7 +9,7 @@ const AddAreaStyle = styled.form`
     top : 70%;
     min-width : 60%;
     min-height: 45%;
-    border : 1px solid black;
+    border : 1px solid #9c88ff;
     display: flex;
     justify-content: center;
 `;
@@ -23,8 +23,8 @@ const AddAreaForm = styled.div`
     position : relative;
     & img{
         position: absolute;
-        top : -13%;
-        left : 40%;
+        top : 0;
+        left : -40%;
         border-radius: 50%;
         padding : 0.5rem; 
         background: linear-gradient(#673ab7, #e53935);
@@ -54,9 +54,13 @@ const pencilRotate = keyframes`
 
 const AddInput = styled.input`
     width : 30rem;
-    height: 5rem;
+    height: 4rem;
     padding : 0.8rem;
     position: relative;
+    border : 1px solid #9c88ff;
+    border-radius: 100px;
+    box-shadow : 0 1.5rem 2rem rgba(156, 136, 255, 0.2);
+    outline : none;
     //background: url(${pencil}) no-repeat right;
     &:active{
         animation: ${pencilRotate} 1s;        
@@ -65,10 +69,17 @@ const AddInput = styled.input`
 
 // 생성 버튼 button
 const AddButton = styled.button`
-    width : 10rem;
+    width : 15rem;
     height : 5rem;
     font-size : 3rem;
-    margin : 1rem auto;
+    margin : 2.5rem auto;
+    border-radius: 100px;
+    background: #9c88ff;
+    color :white;
+    box-shadow : 0 1.5rem 2rem rgba(156, 136, 255, 0.4);
+    &:hover{
+        transform : scale(1.1);
+    }
 `;
 
 const AddStyle = { AddAreaStyle, AddInput,  AddButton, AddAreaForm }
