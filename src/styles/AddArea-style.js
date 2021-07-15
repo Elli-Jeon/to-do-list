@@ -1,6 +1,7 @@
 import styled, {keyframes} from "styled-components";
 
 import pencil from "../assets/images/pencil.png"
+import memo from "../assets/images/memo.png"
 
 
 // Area 자체 CSS
@@ -12,15 +13,39 @@ const AddAreaStyle = styled.form`
     border : 1px solid #9c88ff;
     display: flex;
     justify-content: center;
+    &::before{
+        content : "";
+        width : 6rem;
+        height :6rem;  
+        background: linear-gradient(#673ab7, #e53935);
+        z-index : 1;
+        padding : 0.5rem;
+        border-radius: 50%;
+        position: absolute;
+        box-shadow : 2px 3px 4px;
+        top : -10%;
+    }
+    &::after{
+        content : "";
+        width : 5rem;
+        height :5rem;
+        border-radius: 50%;
+        position : absolute;
+        padding : 0.5rem; 
+        z-index : 2;
+        background: url(${memo}) no-repeat center;
+        top : -8%;
+    }
 `;
 
 const AddAreaForm = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-start;
     font-size : 2rem;
     position : relative;
+    min-height: 40rem;
     & img{
         position: absolute;
         top : 0;

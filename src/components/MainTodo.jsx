@@ -14,9 +14,6 @@ import { TodoContext } from '../context/todo-context'
 // Date Picker
 import CustomDate from "./CustomDate"
 
-// image
-import memo from "../assets/images/memo.png"
-
 const { DisplayAreaStyle, CheckPriorityButton, Reference } = DisplayArea;
 const { AddAreaStyle, AddInput, AddButton, AddAreaForm } = AddStyle;
 
@@ -65,7 +62,6 @@ const MainTodo = () => {
             </DisplayAreaStyle>
             <AddAreaStyle>
                 <AddAreaForm>
-                    <img src={memo} alt="memo"/>
                     <label>할 일을 적어주세요!</label>
                     <AddInput onChange={addTodoValue} value={todo}/>
                     <label>마감 일을 설정해주세요!</label>
