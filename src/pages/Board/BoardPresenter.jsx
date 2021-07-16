@@ -10,8 +10,8 @@ import AddTodoInput from '../../components/AddTodoInput/AddTodoInput';
 import DatePicker from '../../components/DatePicker/DatePicker';
 import AddTodoSubmitButton from '../../components/AddTodoSubmitButton/AddTodoSubmitButton';
 import Reference from '../../components/Reference/Reference';
+import Todo from '../../components/Todo/index' 
 
-import Todo from '../../components/Todo'
 
 const BoardPresenter = ({context, todo, todoSubmit, addTodoValue, setSelectedDay, changeSelectedDay, checkPriority}) => {
     const MainSectionStyle = styled.main`

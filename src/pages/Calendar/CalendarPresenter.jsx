@@ -4,10 +4,7 @@ import styled from 'styled-components';
 // components
 import CalendarSelectedDayTodo from '../../components/CalendarSelectedDayTodo/CalendarSelectedDayTodo';
 import Calendar from "../../components/Calendar/Calendar"
-
-
-
-import Todo from "../../components/Todo";
+import Todo from '../../components/Todo/index'
 
 const CalendarPresenter = ({selectedDay, setSelectedDay, context}) => {
     
