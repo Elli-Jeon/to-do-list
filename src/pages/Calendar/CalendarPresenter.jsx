@@ -6,15 +6,15 @@ import CalendarSelectedDayTodo from '../../components/CalendarSelectedDayTodo/Ca
 import Calendar from "../../components/Calendar/Calendar"
 import Todo from '../../components/Todo/index'
 
+
 const CalendarPresenter = ({selectedDay, setSelectedDay, context}) => {
-
-
 
     return (
         <CalendarSection>
             <Calendar
                 selectedDay={selectedDay}
                 setSelectedDay={setSelectedDay}
+                context={context}
             />
             <CalendarSelectedDayTodo>
                 {context.state.todos.map((eachTodo)=>{
