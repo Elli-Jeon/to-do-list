@@ -2,10 +2,10 @@ import styled from "styled-components";
 import corkBoard from "../../assets/images/corkBoard.jpg"
 
 const CorkBoard = styled.div`
-    position : absolute;
-    top : 3rem;
-    min-width : 80%;
-    min-height: 60%;
+    position: relative;
+    min-width : 800px;
+    min-height: 400px;
+    margin-top : 2rem;
     color : white;
     display: flex;
     flex-direction: row;

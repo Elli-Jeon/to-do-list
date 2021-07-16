@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         max-width : 1440px;
+        min-height : 1000px;
         margin : 0 auto;
     }
 

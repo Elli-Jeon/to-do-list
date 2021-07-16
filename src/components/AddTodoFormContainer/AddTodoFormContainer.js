@@ -3,10 +3,11 @@ import memo from "../../assets/images/memo.png"
 
 
 const AddTodoFormContainer = styled.form`
-    position: absolute;
+    position: relative;
     top : 70%;
-    min-width : 60%;
-    min-height: 45%;
+    min-width : 600px;
+    min-height: 400px;
+    margin-top : 6rem;
     border : 1px solid #9c88ff;
     display: flex;
     justify-content: center;
