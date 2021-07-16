@@ -1,11 +1,12 @@
 import styled from 'styled-components'
 
 const SelectedDayTodoArea = styled.div`
-    width : 20vw;
+    width : 15vw;
     height: 90rem;
     box-shadow : 1px 1px 10px;
     margin-right : 1rem;
     border-radius: 1rem;
+    min-width : 30rem;
     & .selectedDayTodoTitle{
         display : flex;
         justify-content: center;

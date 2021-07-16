@@ -7,8 +7,12 @@ import TotalHeaderStyle from '../../styles/Header-style';
 const { HeaderStyle, NavStyle } = TotalHeaderStyle;
 
 const activeStyle = {
-    border: '1px solid blue',
-    borderRadius : '1rem'
+    border: '1px solid black',
+    background : 'black',
+    borderTopLeftRadius : '1rem',
+    borderTopRightRadius : '1rem',
+    color : 'white',
+    padding : '0 1rem',
 };
 
 const Header = () => {

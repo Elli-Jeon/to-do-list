@@ -8,7 +8,7 @@ const AddTodoButton = styled.button`
     border-radius: 100px;
     background: #9c88ff;
     color :white;
-    box-shadow : 0 1.5rem 2rem rgba(156, 136, 255, 0.4);
+    box-shadow : 1rem 1.5rem 3rem rgba(156, 136, 255, 0.5);
     &:hover{
         transform : scale(1.1);
     }

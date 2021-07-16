@@ -2,24 +2,23 @@ import styled from "styled-components";
 
 const HeaderStyle = styled.header`
     display : flex;
-    flex-direction : column;
-    justify-content : center;
-    align-items : center;
+    flex-direction : row;
+    flex-wrap: nowrap;
+    justify-content : space-between;
+    align-items : flex-end;
     margin-top : 1rem;
-    padding-bottom : 1rem;
     border-bottom: 1px solid black;
-    & button {
-        padding : 2rem;
+    min-width : 420px;
+    & a h1 {
+        font-size : 5rem;
     }
 `;
 
 const NavStyle = styled.nav`
     display : flex;
-    justify-content : center;
-    align-items : center;
-    font-size : 5rem;
+    font-size : 3rem;
     & > * {
-        margin : 0.5rem 1rem;
+        margin : 0.5rem 1rem 0 1rem;
     }
 `;
 
