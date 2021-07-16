@@ -11,6 +11,7 @@ import GlobalState from './context/GlobalState';
 // pages
 import Board from './pages/Board/index'
 import Calendar from "./pages/Calendar/index"
+import Root from './pages/Root/index'
 
 const App = () => {
    
@@ -20,7 +21,8 @@ const App = () => {
                 <GlobalStyle />
                 <Router>
                     <Header />
-                    <Route path="/" exact component={Board} />
+                    <Route path="/" exact component={Root} />
+                    <Route path="/board" exact component={Board} />
                     <Route path="/calendar" exact component={Calendar} />
                 </Router>
             </GlobalState>

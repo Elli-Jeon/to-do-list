@@ -21,7 +21,7 @@ const Header = () => {
             <HeaderStyle>
                 <Link to="/" ><h1>To Do List</h1></Link>
                 <NavStyle>
-                    <NavLink exact activeStyle={activeStyle} to="/">To Do</NavLink>
+                    <NavLink exact activeStyle={activeStyle} to="/board">To Do</NavLink>
                     <NavLink activeStyle={activeStyle} to="/calendar">Calendar</NavLink>
                 </NavStyle>
             </HeaderStyle>
