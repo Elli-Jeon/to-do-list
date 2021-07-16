@@ -6,7 +6,6 @@ import GlobalStyle from './styles/GlobalStyle';
 
 // Components
 import Header from './components/Header/Header';
-import MainTodo from './components/MainTodo';
 import GlobalState from './context/GlobalState';
 
 // pages

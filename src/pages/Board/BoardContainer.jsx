@@ -37,18 +37,19 @@ const BoardContainer = () => {
         context.dispatch({type : ACTIONS.TODO_CHECK_PRIORITY})
     }
 
+    console.log(todo);
+
     return (
         <BoardPresenter 
-            context={context}>
+            context={context}
             checkPriority={checkPriority}
             todo={todo}
             todoSubmit={todoSubmit}
             addTodoValue={addTodoValue}
             setSelectedDay={setSelectedDay}
-            changeSelectedDay={changeSelectedDay}
-            
-        </BoardPresenter>
+            changeSelectedDay={changeSelectedDay} 
+        />
     )
 }
 
-export default BoardContainer
+export default React.memo(BoardContainer)

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 
 // Components
+import MainSectionStyle from '../../styles/MainSection-style';
 import CorkBoard from '../../components/CorkBoard/CorkBoard';
 import CheckPriorityButton from '../../components/CheckPriorityButton/CheckPriorityButton';
 import AddTodoFormContainer from '../../components/AddTodoFormContainer/AddTodoFormContainer';
@@ -13,16 +14,8 @@ import Reference from '../../components/Reference/Reference';
 import Todo from '../../components/Todo/index' 
 
 
-const BoardPresenter = ({context, todo, todoSubmit, addTodoValue, setSelectedDay, changeSelectedDay, checkPriority}) => {
-    const MainSectionStyle = styled.main`
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 70vh;
-        position: relative;
-    `;
-    
+const BoardPresenter = ({context, todo, todoSubmit, addTodoValue, setSelectedDay, changeSelectedDay, checkPriority} ) => {
+
     return (
         <MainSectionStyle>
             <CorkBoard>
@@ -51,4 +44,4 @@ const BoardPresenter = ({context, todo, todoSubmit, addTodoValue, setSelectedDay
     )
 }
 
-export default BoardPresenter
+export default React.memo(BoardPresenter)

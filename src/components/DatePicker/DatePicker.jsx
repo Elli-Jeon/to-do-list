@@ -4,7 +4,8 @@ import DatePicker from "react-modern-calendar-datepicker";
 
 
 const App = ({ changeSelectedDay }) => {
-  const [selectedDay, setSelectedDay] = useState(null);
+  const [pickedDay, setPickedDay] = useState(null);
+  
   
   // render regular HTML input element
   const renderCustomInput = ({ ref }) => (
@@ -12,7 +13,7 @@ const App = ({ changeSelectedDay }) => {
       readOnly
       ref={ref} // necessary
       placeholder="Select Due Date"
-      value={selectedDay ? `${selectedDay.year} / ${selectedDay.month} / ${selectedDay.day} ✅`: ''}
+      value={pickedDay ? `${pickedDay.year} / ${pickedDay.month} / ${pickedDay.day} ✅`: ''}
       style={{
         width : '30rem',
         textAlign: 'center',
@@ -30,13 +31,13 @@ const App = ({ changeSelectedDay }) => {
       // changeSelectedDay는 부모에서 정의되서 내려와가지고 부모의 selected day를 바꿔줌
       // setSelectedDay는 컴포넌트 안에서만 쓸 려고 사용 input의 value 값 바꿔주기 위해
   const selectedDayChange = (e) => {
-      changeSelectedDay(e);
-      setSelectedDay(e);
+    setPickedDay(e);  
+    changeSelectedDay(e);
     }
   
   return (
     <DatePicker
-      value={selectedDay}
+      value={pickedDay}
       onChange={selectedDayChange}
       renderInput={renderCustomInput} // render a custom input
       shouldHighlightWeekends
