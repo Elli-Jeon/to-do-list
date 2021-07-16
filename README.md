@@ -21,7 +21,8 @@
 |Rename|기존 파일 이름 변경|
 |DOC|md 같은 문서 작업|
 |INIT|시작|
-|Config|환경설정|         
+|Config|환경설정|  
+|Refactor|리팩토링       
 
 ## 2. 넣고 싶은 기능
 ---
@@ -33,65 +34,113 @@
 - [x] 할 일 리스트에서 삭제
 - [x] 할 일 리스트는 위부터 우선순위에 따라 표기
 - [x] 다른 탭에서는 1주일 달력을 놓고 해당 일에 할 일 적혀 있기
+- [ ] 메인페이지에서 로그인 기능
 
 ## 3. 사용한 언어 소개
 --- 
-|react|styled-components|
-|:---:|:---:|
-|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" width="100px"></img> | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTZSSy%2FbtqZtyZjFZ1%2FZRYhKoWkW5Wtn1DoeicjRK%2Fimg.png" width="100px">|
+|react|styled-components|react-router-dom|
+|:---:|:---:|:---:|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" width="100px"></img> | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTZSSy%2FbtqZtyZjFZ1%2FZRYhKoWkW5Wtn1DoeicjRK%2Fimg.png" width="100px">|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fehk5OA%2FbtqBqO5CYBp%2FGdM7LH5JcFlujAUCsN9wek%2Fimg.png" width="100px">
 
-react를 통해서 to-do-list를 만들었고, Styled-components는 좀 더 깔끔하게 CSS를 쓰고 싶어서 사용하였다. 
+react를 통해서 to-do-list를 만들었고, Styled-components는 좀 더 깔끔하게 CSS와 컴포넌트를 쓰고 싶어서 사용하였다. reac-router-dom을 사용해 routing을 했다.
 
 ## 4. 폴더 디렉토리 
 ---
 ```bash
-│  .gitignore
-│  package-lock.json
-│  package.json
-│  README.md
-│  yarn.lock
-│  
-├─node_modules
-│          
+│
 ├─public
 │      index.html
-│      
+│
 └─src
     │  App.js
     │  index.js
-    │  
+    │
+    ├─assets
+    │  └─images
+    │          calculator.png
+    │          corkBoard.jpg
+    │          memo.png
+    │          pencil.png
+    │          pin.png
+    │          real-pin.png
+    │
     ├─components
-    │      Header.jsx
-    │      MainCalendar.jsx
-    │      MainTodo.jsx
-    │      Todo.jsx
-    │      
+    │  ├─AddTodoForm
+    │  │      AddTodoForm.js
+    │  │
+    │  ├─AddTodoFormContainer
+    │  │      AddTodoFormContainer.js
+    │  │
+    │  ├─AddTodoInput
+    │  │      AddTodoInput.js
+    │  │
+    │  ├─AddTodoSubmitButton
+    │  │      AddTodoSubmitButton.js
+    │  │
+    │  ├─Calendar
+    │  │      Calendar.js
+    │  │
+    │  ├─CalendarSelectedDayTodo
+    │  │      CalendarSelectedDayTodo.js
+    │  │
+    │  ├─CheckPriorityButton
+    │  │      CheckPriorityButton.js
+    │  │
+    │  ├─CorkBoard
+    │  │      CorkBoard.js
+    │  │
+    │  ├─DatePicker
+    │  │      DatePicker.jsx
+    │  │
+    │  ├─Header
+    │  │      Header.jsx
+    │  │
+    │  ├─Reference
+    │  │      Reference.js
+    │  │
+    │  ├─Todo
+    │  │      index.jsx
+    │  │      TodoContainer.jsx
+    │  │      TodoPresenter.jsx
+    │  │
+    │  └─TodoPostIt
+    │          TodoPostIt.js
+    │
     ├─context
     │      actions.js
     │      GlobalState.js
     │      reducers.js
     │      todo-context.js
-    │      
+    │
+    ├─pages
+    │  ├─Board
+    │  │      BoardContainer.jsx
+    │  │      BoardPresenter.jsx
+    │  │      index.js
+    │  │
+    │  ├─Calendar
+    │  │      CalendarContainer.jsx
+    │  │      CalendarPresenter.jsx
+    │  │      index.jsx
+    │  │
+    │  └─Root
+    │          index.js
+    │          RootContainer.js
+    │          RootPresenter.js
+    │
     └─styles
-            AddArea-style.js
-            CalendarArea-style.js
-            DisplayArea-style.js
+            BoardSection-style.js
+            CalendarSection-style.js
             GlobalStyle.js
             Header-style.js
-            Main-style.js
             
 ```
 (cmd에서 tree /F .txt로 저장 가능)
 
 ### 4.1 디렉토리 구성
 
--  #### 4.1.1. components
-    다시 사용 가능한 기능 단위로 채우고 싶었는데 components를 pages 처럼 쓴 것 같다.
--  #### 4.1.2. context
-    STORE의 기능. 전체 컴포넌트에 현재 todos 데이터와 dispatch를 뿌려준다. 
--  #### 4.1.3. styles
-    컴포넌트들의 style을 정의해주어 components 폴더에 제공해준다.
-     
+- Presenter - Container 패턴을 사용하여 컴포넌트 구성
+
 ### 4.2 dependencies
 
 ```json
@@ -119,27 +168,33 @@ react를 통해서 to-do-list를 만들었고, Styled-components는 좀 더 깔�
 
 ### 5.1 할 일 등록
 
-![enroll](https://user-images.githubusercontent.com/68575268/125436344-f58051a7-77a9-4f15-b699-62be4e8419ce.png)
+![ezgif-3-1974d38c0ea4](https://user-images.githubusercontent.com/68575268/125988660-618dad4a-7c2c-4669-ad0b-904011e01752.gif)
+
 
 - 할일 내용과 우선순위를 적고 Add 버튼을 누르면 상단에 등록
 
 ### 5.2 할 일 삭제
 
+![ezgif-3-b35d0f0cc57f](https://user-images.githubusercontent.com/68575268/125988976-3c50b103-ee94-4d18-b232-2c4de2d88708.gif)
+
+
 - 등록된 이후 상단에서 삭제 버튼을 누르면 화면에서 삭제
 
 ### 5.3 우선순위에 맞게 표시
 
-![](![제목 없음](https://user-images.githubusercontent.com/68575268/125625476-b8cfd9a6-8ef7-44f9-a255-75cf98b5605c.png)
+![ezgif-3-559a54ef9361](https://user-images.githubusercontent.com/68575268/125989316-937ad41e-dede-4a8e-aae1-59e0f1b378b6.gif)
 
 - priority 버튼을 클릭하면 현재 시점부터 가장 가까운 날짜 순으로 숫자가 표시
-- 
+- 이미 지난 날짜일 경우 "Out of Date" 표기
 
 ### 5.4 캘린더에 표시
 
-![selectday](https://user-images.githubusercontent.com/68575268/125436353-eec142f0-825c-464d-b594-4294846a8280.png)
+![1](https://user-images.githubusercontent.com/68575268/125989448-25473996-4321-4fad-a6a0-903ca4a2f0ba.png)
 
-- 등록한 날짜에 맞추어서 해당 날짜 클릭 시 그날 할일이 표시
-- 이미 지난 날짜일 경우 "Out of Date" 표기
+- 등록한 날짜에 맞추어서 해당 날짜 클릭 시 그날 왼쪽에 할일이 표시
+- 등록한 할 일이 있으면 해당 날짜에 보라색으로 표시
+
+### 5.5 To do와 Calendar의 할 일 리스트는 서로 연동
 
 
 ## 6. 배운 점 및 보완할 점
@@ -150,6 +205,7 @@ react를 통해서 to-do-list를 만들었고, Styled-components는 좀 더 깔�
 |2. **useReducer를 사용한 상태 관리** : 컴포넌트 밖에서 상태를 관리하는 방법. <code>reducer (state,action)</code>을 밖에, <code>const[state, dispatch] = useReducer(reducer, initValue)</code>를 컴포넌트 안쪽에. 컴포넌트 안쪽의 <code>dispatch({type:00})</code>이 컴포넌트 밖 reducer의 action을 건들여 state의 변화 유도|Context>action.js, >reducers.js|
 |3. **폴더 Structuring과 Styled-Components** : Styled-Components를 활용해서 컴포넌트를 생성해 export시킴으로 컴포넌트를 분리시키고, 폴더를 어떻게 구조화시키는지 배움| Styles, Components
 |4. **github wiki와 issues 사용법**||
+|5. **Container-Presenter Design Pattern** : state 정의, 변화를 위한 함수 등은 모두 container에, 그 안의 presenter에서는 화면에 표시할 UI만||<a href="https://clownhacker.tistory.com/224" target="_blank"></a>
 
 |보완할 점|보완 방법
 |:---|:---|
