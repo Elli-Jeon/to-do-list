@@ -6,7 +6,7 @@ import { ACTIONS } from '../../context/actions';
 import { TodoContext } from '../../context/todo-context';
 
 
-const TodoContainer = ({todo}) => {
+const TodoContainer = ({todo, isCalendar}) => {
     
     const context = useContext(TodoContext);
     const [ edit, setEdit ] = useState(false);
@@ -66,6 +66,7 @@ const TodoContainer = ({todo}) => {
             todoEdit={todoEdit}
             todoEditSubmit={todoEditSubmit}
             todoDelete={todoDelete}
+            isCalendar={isCalendar}
         />
     )
 }

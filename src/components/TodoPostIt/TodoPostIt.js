@@ -42,7 +42,7 @@ const TodoPostIt = styled.div`
     ${({color})=>{
         if(color === "red"){
             return css`
-                background: linear-gradient(#ff6f60, #e57373);
+                background: linear-gradient(#ff8a80, #f44336);
             `;
         } else if(color === "blue"){
             return css`
@@ -50,19 +50,26 @@ const TodoPostIt = styled.div`
             `;
         } else if(color === "yellow"){
             return css`
-                background: linear-gradient(#ffeb3b, #fdd835);
+                background: linear-gradient(#fdd835, #fdd835);
             `;
         }
     }}
     &::after{
         content : "";
         position: absolute;
-        top : 0;
-        transform: translate(55%,-70%);
+        top : -25%;
+        left : 45%;
         background: url(${realpin}) top no-repeat;
         background-size: 80%;
         width : 70px;
         height: 70px;
+        ${({isCalendar})=>{
+            if(isCalendar){
+                return css`
+                    display: none;
+                `;
+            }
+        }}
     }
     & h2 {
         margin : 0.5rem;

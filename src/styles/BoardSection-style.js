@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const MainSectionStyle = styled.main`
+const BoardSectionStyle = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,4 +9,4 @@ const MainSectionStyle = styled.main`
     position: relative;
 `;
 
-export default MainSectionStyle;
+export default BoardSectionStyle;

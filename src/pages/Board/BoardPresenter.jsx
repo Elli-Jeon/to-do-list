@@ -1,8 +1,7 @@
 import React from 'react'
-import styled from "styled-components"
 
 // Components
-import MainSectionStyle from '../../styles/MainSection-style';
+import BoardSectionStyle from '../../styles/BoardSection-style';
 import CorkBoard from '../../components/CorkBoard/CorkBoard';
 import CheckPriorityButton from '../../components/CheckPriorityButton/CheckPriorityButton';
 import AddTodoFormContainer from '../../components/AddTodoFormContainer/AddTodoFormContainer';
@@ -17,7 +16,7 @@ import Todo from '../../components/Todo/index'
 const BoardPresenter = ({context, todo, todoSubmit, addTodoValue, setSelectedDay, changeSelectedDay, checkPriority} ) => {
 
     return (
-        <MainSectionStyle>
+        <BoardSectionStyle>
             <CorkBoard>
                 {context.state.todos.map((eachTodo)=>{
                     return (
@@ -40,7 +39,7 @@ const BoardPresenter = ({context, todo, todoSubmit, addTodoValue, setSelectedDay
                 <a target="_blank" href="https://icons8.com/icon/9i9HlS0bGONj/pencil">Pencil</a> icon by <a target="_blank" href="https://icons8.com">Icons8  </a>
                 <a target="_blank" href="https://icons8.com/icon/MbRthDvtoWcb/memo">Memo</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
             </Reference>
-        </MainSectionStyle>
+        </BoardSectionStyle>
     )
 }
 

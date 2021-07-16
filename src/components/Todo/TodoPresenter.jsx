@@ -2,9 +2,9 @@ import React from 'react'
 
 import TodoPostIt from '../TodoPostIt/TodoPostIt';
 
-const TodoPresenter = ({todo, edit, color, deleted, todoEdit, todoEditSubmit, todoDelete}) => {
+const TodoPresenter = ({todo, edit, color, deleted, todoEdit, todoEditSubmit, todoDelete, isCalendar}) => {
     return (
-        <TodoPostIt className={deleted? 'deleted' : null} color={color}>
+        <TodoPostIt className={deleted? 'deleted' : null} color={color} isCalendar={isCalendar}>
             <h2>{todo.priority}</h2> 
             {edit? (<input placeholder={todo.todo} onChange={todoEdit}/>) : (<p>{todo.todo}</p>)}
             

@@ -16,14 +16,14 @@ const App = () => {
    
     return (
         <div>
-                <GlobalState >
-                    <GlobalStyle />
-                    <Router>
-                        <Header />
-                        <Route path="/" exact component={Board} />
-                        <Route path="/calendar" exact component={Calendar} />
-                    </Router>
-                </GlobalState>
+            <GlobalState >
+                <GlobalStyle />
+                <Router>
+                    <Header />
+                    <Route path="/" exact component={Board} />
+                    <Route path="/calendar" exact component={Calendar} />
+                </Router>
+            </GlobalState>
         </div>
     )
 }
