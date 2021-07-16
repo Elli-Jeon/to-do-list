@@ -17,8 +17,6 @@ const MainCalendar = () => {
     const [selectedDay, setSelectedDay] = useState(null);
     const context = useContext(TodoContext);
 
-    console.log(selectedDay);
-    console.log(context)
     return (
         <CalendarArea>
             <Calendar

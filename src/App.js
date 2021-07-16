@@ -7,8 +7,10 @@ import GlobalStyle from './styles/GlobalStyle';
 // Components
 import Header from './components/Header';
 import MainTodo from './components/MainTodo';
-import MainCalendar from "./components/MainCalendar";
 import GlobalState from './context/GlobalState';
+
+// pages
+import Calendar from "./pages/Calendar/index"
 
 const App = () => {
    
@@ -19,7 +21,7 @@ const App = () => {
                     <Router>
                         <Header />
                         <Route path="/" exact component={MainTodo} />
-                        <Route path="/calendar" exact component={MainCalendar} />
+                        <Route path="/calendar" exact component={Calendar} />
                     </Router>
                 </GlobalState>
         </div>
