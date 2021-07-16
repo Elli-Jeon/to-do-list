@@ -11,18 +11,19 @@ const CalendarPresenter = ({selectedDay, setSelectedDay, context}) => {
 
     return (
         <CalendarSection>
-            <Calendar
-                selectedDay={selectedDay}
-                setSelectedDay={setSelectedDay}
-                context={context}
-            />
             <CalendarSelectedDayTodo>
+                <div className='selectedDayTodoTitle'>이날의 할 일</div>
                 {context.state.todos.map((eachTodo)=>{
                     if(selectedDay !== null && selectedDay.year === eachTodo.dueDate.year && selectedDay.month === eachTodo.dueDate.month && selectedDay.day === eachTodo.dueDate.day){
                         return <Todo key={eachTodo.id} todo={eachTodo} isCalendar={true}/>
                     }
                 })}
             </CalendarSelectedDayTodo>
+            <Calendar
+                selectedDay={selectedDay}
+                setSelectedDay={setSelectedDay}
+                context={context}
+            />
         </CalendarSection>
     );
 }

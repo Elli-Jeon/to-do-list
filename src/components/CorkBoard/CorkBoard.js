@@ -3,7 +3,7 @@ import corkBoard from "../../assets/images/corkBoard.jpg"
 
 const CorkBoard = styled.div`
     position: relative;
-    min-width : 800px;
+    min-width : 1000px;
     min-height: 400px;
     margin-top : 2rem;
     color : white;
