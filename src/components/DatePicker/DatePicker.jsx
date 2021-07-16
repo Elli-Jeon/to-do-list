@@ -5,8 +5,7 @@ import DatePicker from "react-modern-calendar-datepicker";
 
 const App = ({ changeSelectedDay }) => {
   const [selectedDay, setSelectedDay] = useState(null);
-
-
+  
   // render regular HTML input element
   const renderCustomInput = ({ ref }) => (
     <input

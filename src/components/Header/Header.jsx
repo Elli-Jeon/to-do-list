@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 // css
-import TotalHeaderStyle from '../styles/Header-style';
+import TotalHeaderStyle from '../../styles/Header-style';
 
 const { HeaderStyle, NavStyle } = TotalHeaderStyle;
 

@@ -1,7 +1,7 @@
 import React from 'react'
+import styled from 'styled-components';
 
 // components
-import CalendarSection from '../../components/CalendarSection/CalendarSection';
 import CalendarSelectedDayTodo from '../../components/CalendarSelectedDayTodo/CalendarSelectedDayTodo';
 import Calendar from "../../components/Calendar/Calendar"
 
@@ -10,7 +10,16 @@ import Calendar from "../../components/Calendar/Calendar"
 import Todo from "../../components/Todo";
 
 const CalendarPresenter = ({selectedDay, setSelectedDay, context}) => {
-     
+    
+    const CalendarSection = styled.div`
+    display : flex;
+    flex-direction: row;
+    justify-content : center;
+    align-items : center;
+    min-height : 80vh;
+    `;
+
+
     return (
         <CalendarSection>
             <Calendar

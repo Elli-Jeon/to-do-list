@@ -46,15 +46,6 @@ const AddAreaForm = styled.div`
     font-size : 2rem;
     position : relative;
     min-height: 40rem;
-    & img{
-        position: absolute;
-        top : 0;
-        left : -40%;
-        border-radius: 50%;
-        padding : 0.5rem; 
-        background: linear-gradient(#673ab7, #e53935);
-        box-shadow : 2px 3px 4px;
-    }
     & > * {
         margin : 0.5rem 0;
     }

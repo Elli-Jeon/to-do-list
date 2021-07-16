@@ -12,7 +12,7 @@ import {ACTIONS} from '../context/actions'
 import { TodoContext } from '../context/todo-context'
 
 // Date Picker
-import CustomDate from "./CustomDate"
+import DatePicker from "./DatePicker/DatePicker"
 
 const { DisplayAreaStyle, CheckPriorityButton, Reference } = DisplayArea;
 const { AddAreaStyle, AddInput, AddButton, AddAreaForm } = AddStyle;
@@ -65,7 +65,7 @@ const MainTodo = () => {
                     <label>할 일을 적어주세요!</label>
                     <AddInput onChange={addTodoValue} value={todo}/>
                     <label>마감 일을 설정해주세요!</label>
-                    <CustomDate onChange={setSelectedDay} changeSelectedDay={changeSelectedDay}/>
+                    <DatePicker onChange={setSelectedDay} changeSelectedDay={changeSelectedDay}/>
                     {console.log(selectedDay)}
                     <AddButton onClick={todoSubmit}>Add</AddButton>
                 </AddAreaForm>

@@ -5,11 +5,12 @@ import {Link, Route, BrowserRouter as Router} from 'react-router-dom'
 import GlobalStyle from './styles/GlobalStyle';
 
 // Components
-import Header from './components/Header';
+import Header from './components/Header/Header';
 import MainTodo from './components/MainTodo';
 import GlobalState from './context/GlobalState';
 
 // pages
+import Board from './pages/Board/index'
 import Calendar from "./pages/Calendar/index"
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
                     <GlobalStyle />
                     <Router>
                         <Header />
-                        <Route path="/" exact component={MainTodo} />
+                        <Route path="/" exact component={Board} />
                         <Route path="/calendar" exact component={Calendar} />
                     </Router>
                 </GlobalState>

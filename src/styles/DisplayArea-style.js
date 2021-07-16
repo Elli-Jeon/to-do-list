@@ -40,7 +40,6 @@ const CheckPriorityButton = styled.button`
     &:hover {
         transform: rotate(-25deg);
     }
-
 `;
 
 const TodoDeleteFade = keyframes`
