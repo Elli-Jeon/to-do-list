@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/to-do-list/static/js/main.753f9b27.chunk.js",
+    "main.js.map": "/to-do-list/static/js/main.753f9b27.chunk.js.map",
+    "runtime-main.js": "/to-do-list/static/js/runtime-main.118c5dec.js",
+    "runtime-main.js.map": "/to-do-list/static/js/runtime-main.118c5dec.js.map",
+    "static/css/2.10852e48.chunk.css": "/to-do-list/static/css/2.10852e48.chunk.css",
+    "static/js/2.c875fa7f.chunk.js": "/to-do-list/static/js/2.c875fa7f.chunk.js",
+    "static/js/2.c875fa7f.chunk.js.map": "/to-do-list/static/js/2.c875fa7f.chunk.js.map",
+    "index.html": "/to-do-list/index.html",
+    "static/css/2.10852e48.chunk.css.map": "/to-do-list/static/css/2.10852e48.chunk.css.map",
+    "static/js/2.c875fa7f.chunk.js.LICENSE.txt": "/to-do-list/static/js/2.c875fa7f.chunk.js.LICENSE.txt",
+    "static/media/corkBoard.ed5928ac.jpg": "/to-do-list/static/media/corkBoard.ed5928ac.jpg",
+    "static/media/real-pin.403b3fe5.png": "/to-do-list/static/media/real-pin.403b3fe5.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.118c5dec.js",
+    "static/css/2.10852e48.chunk.css",
+    "static/js/2.c875fa7f.chunk.js",
+    "static/js/main.753f9b27.chunk.js"
+  ]
+}
