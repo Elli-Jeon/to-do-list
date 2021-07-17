@@ -35,9 +35,9 @@
 
 ## 3. 사용한 언어 소개
 --- 
-|react|styled-components|react-router-dom|
-|:---:|:---:|:---:|
-|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" width="100px"></img> | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTZSSy%2FbtqZtyZjFZ1%2FZRYhKoWkW5Wtn1DoeicjRK%2Fimg.png" width="100px">|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fehk5OA%2FbtqBqO5CYBp%2FGdM7LH5JcFlujAUCsN9wek%2Fimg.png" width="100px">
+|react|styled-components|react-router-dom|react-modern-calendar-datepicker
+|:---:|:---:|:---:|:---:|
+|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" width="100px"></img> | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTZSSy%2FbtqZtyZjFZ1%2FZRYhKoWkW5Wtn1DoeicjRK%2Fimg.png" width="100px">|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fehk5OA%2FbtqBqO5CYBp%2FGdM7LH5JcFlujAUCsN9wek%2Fimg.png" width="100px">|<img src="https://user-images.githubusercontent.com/68575268/126028560-20f5a68f-fdb7-47bb-af62-cd25b9bf49c1.png" width="100px">|
 
 react를 통해서 to-do-list를 만들었고, Styled-components는 좀 더 깔끔하게 CSS와 컴포넌트를 쓰고 싶어서 사용하였다. reac-router-dom을 사용해 routing을 했다.
 
