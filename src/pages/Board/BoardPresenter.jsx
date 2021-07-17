@@ -13,12 +13,12 @@ import Reference from '../../components/Reference/Reference';
 import Todo from '../../components/Todo/index' 
 
 
-const BoardPresenter = ({context, todo, todoSubmit, addTodoValue, setSelectedDay, changeSelectedDay, checkPriority} ) => {
+const BoardPresenter = ({ todoContext, todo, todoSubmit, addTodoValue, setSelectedDay, changeSelectedDay, checkPriority} ) => {
 
     return (
         <BoardSectionStyle>
             <CorkBoard>
-                {context.state.todos.map((eachTodo)=>{
+                {todoContext.todos.map((eachTodo)=>{
                     return (
                     <Todo key={eachTodo.id} todo={eachTodo} />
                     )

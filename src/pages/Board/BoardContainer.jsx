@@ -3,12 +3,14 @@ import BoardPresenter from './BoardPresenter'
 
 // ACTIONS & Context
 import {ACTIONS} from '../../context/actions'
-import { TodoContext } from '../../context/todo-context'
+import { TodoContext } from '../../context/todoContext'
+import DispatchContext from '../../context/dispatchContext'
 
 
 const BoardContainer = () => {
     
-    const context = useContext(TodoContext);
+    const todoContext = useContext(TodoContext);
+    const dispatch = useContext(DispatchContext); // dispatch에 바로 가져 옴. 
 
     const [ todo, setTodo ] = useState("");
     const [ priority, setPriority ] = useState("Check now!");
@@ -23,25 +25,23 @@ const BoardContainer = () => {
     const changeSelectedDay = (day) => {
         setSelectedDay(day);
     }
-
+    //console.log(dispatchContext);
     // todo를 위로 올려 줌. 
     const todoSubmit = (e) => {
         e.preventDefault();
-        context.dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority, selectedDay }});
+        dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority, selectedDay }});
         setTodo('');
         setPriority("Check Now!");
     }
 
     const checkPriority = (e) => {
         e.preventDefault();
-        context.dispatch({type : ACTIONS.TODO_CHECK_PRIORITY})
+        dispatch({type : ACTIONS.TODO_CHECK_PRIORITY})
     }
-
-    console.log(todo);
 
     return (
         <BoardPresenter 
-            context={context}
+            todoContext={todoContext}
             checkPriority={checkPriority}
             todo={todo}
             todoSubmit={todoSubmit}

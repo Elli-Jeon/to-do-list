@@ -2,17 +2,20 @@ import React, { useState, useContext } from "react";
 import CalaendarPresenter from "./CalendarPresenter";
 
 // context
-import { TodoContext } from "../../context/todo-context";
+import { TodoContext } from "../../context/todoContext";
+import DispatchContext from "../../context/dispatchContext";
 
 const CalaendarContainer = () => {
+    const todoContext = useContext(TodoContext);
+    const dispatchContext = useContext(DispatchContext);
+
     const [selectedDay, setSelectedDay] = useState(null);
-    const context = useContext(TodoContext);
 
     return (
         <CalaendarPresenter 
             selectedDay={selectedDay}
             setSelectedDay={setSelectedDay}
-            context={context}
+            todoContext={todoContext}
         />
     );
 }

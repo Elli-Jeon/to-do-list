@@ -7,13 +7,13 @@ import Calendar from "../../components/Calendar/Calendar"
 import Todo from '../../components/Todo/index'
 
 
-const CalendarPresenter = ({selectedDay, setSelectedDay, context}) => {
+const CalendarPresenter = ({selectedDay, setSelectedDay, todoContext}) => {
 
     return (
         <CalendarSection>
             <CalendarSelectedDayTodo>
                 <div className='selectedDayTodoTitle'>이날의 할 일</div>
-                {context.state.todos.map((eachTodo)=>{
+                {todoContext.todos.map((eachTodo)=>{
                     if(selectedDay !== null && selectedDay.year === eachTodo.dueDate.year && selectedDay.month === eachTodo.dueDate.month && selectedDay.day === eachTodo.dueDate.day){
                         return <Todo key={eachTodo.id} todo={eachTodo} isCalendar={true}/>
                     }
@@ -22,7 +22,7 @@ const CalendarPresenter = ({selectedDay, setSelectedDay, context}) => {
             <Calendar
                 selectedDay={selectedDay}
                 setSelectedDay={setSelectedDay}
-                context={context}
+                todoContext={todoContext}
             />
         </CalendarSection>
     );

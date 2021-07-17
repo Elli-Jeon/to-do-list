@@ -3,31 +3,31 @@ import TodoPresenter from './TodoPresenter'
 
 // Actions & Container
 import { ACTIONS } from '../../context/actions';
-import { TodoContext } from '../../context/todo-context';
+import { TodoContext } from '../../context/todoContext';
+import DispatchContext from '../../context/dispatchContext';
 
 
 const TodoContainer = ({todo, isCalendar}) => {
     
-    const context = useContext(TodoContext);
+    const todoContext = useContext(TodoContext);
+    const dispatch = useContext(DispatchContext);
     const [ edit, setEdit ] = useState(false);
     const [ newTodo, SetNewTodo ] = useState();
     const [ deleted, setDeleted ] = useState(false);
     const [ color, setColor ] = useState("red");
-
 
     const todoDelete = (e) => {
         e.preventDefault();
         //console.log(e);
         setDeleted(true);
         // setTimeout 안 걸면 바로 상태 변화로 상위 MainTodo에서 map돌 때 삭제되어 버림.
-       
     }
 
     // setTimeOut useEffect에 담아야 함.
     useEffect(()=>{
         if(deleted === true){
             setTimeout(()=>{
-                context.dispatch({type : ACTIONS.TODO_DELETE, payload : { todo }});
+                dispatch({type : ACTIONS.TODO_DELETE, payload : { todo }});
                 
                 return () => setDeleted(false); // cleanUp을 함수로 걸어주었기(비동기) 때문에, 사라진 컴포넌트의 deleted를 참조하지 않게 되어서 에러 해결
             },2500) 
@@ -53,7 +53,7 @@ const TodoContainer = ({todo, isCalendar}) => {
         e.preventDefault();
         setEdit(!edit);  
         if(edit){
-            context.dispatch({type : ACTIONS.TODO_EDIT, payload : { todo, newTodo }})
+            dispatch({type : ACTIONS.TODO_EDIT, payload : { todo, newTodo }})
         }     
     }
 

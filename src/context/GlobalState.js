@@ -1,21 +1,24 @@
 // GlobalState 목표 : useReducer와 context API를 합쳐서 App.js를 깔끔하게 만들기 (0)
 import React, { useReducer } from 'react'
 
-// context, initalValue
-import { TodoContext, initialValue } from './todo-context';
+// Todocontext, initalValue
+import { TodoContext, initialValue } from './todoContext';
+
+// DispatchContext
+import dispatchContext from './dispatchContext';
 
 // reducer
 import { reducer } from './reducers';
+
 
 const GlobalState = props => {
     const [ state, dispatch ] = useReducer(reducer, initialValue);
 
     return (
-        <TodoContext.Provider value={{
-            state : state,
-            dispatch : dispatch,
-        }}>
-            {props.children}
+        <TodoContext.Provider value={state}>
+            <dispatchContext.Provider value={dispatch}>
+                {props.children}
+            </dispatchContext.Provider>
         </TodoContext.Provider>
     );
 }
