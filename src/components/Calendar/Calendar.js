@@ -1,5 +1,5 @@
 // Calendar
-import "react-modern-calendar-datepicker/lib/DatePicker.css";
+import "./Calendar.css";
 import { Calendar } from "react-modern-calendar-datepicker";
 
 const CustomCalendar = ({selectedDay, setSelectedDay, todoContext}) => {
