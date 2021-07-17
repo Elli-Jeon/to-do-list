@@ -1,9 +1,6 @@
 # to-do-list 
 
-1. Commit 약속
-2. 넣고 싶은 기능
-3. 컴포넌트 구조도   
-
+<a href="https://elli-jeon.github.io/to-do-list/" target="_blank">사이트 바로가기</a>
       
 ## 1. commit 약속
 ---
