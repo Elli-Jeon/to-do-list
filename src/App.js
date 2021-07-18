@@ -19,7 +19,7 @@ const App = () => {
         <div>
             <GlobalState >
                 <GlobalStyle />
-                <Router>
+                <Router basename="/to-do-list">
                     <Header />
                     <Route path="/" exact component={Root} />
                     <Route path="/board" exact component={Board} />
