@@ -1,5 +1,5 @@
 // Calendar
-import "./Calendar.css";
+import "../../styles/Calendar-style.css";
 import { Calendar } from "react-modern-calendar-datepicker";
 
 const CustomCalendar = ({selectedDay, setSelectedDay, todoContext}) => {
@@ -10,7 +10,6 @@ const CustomCalendar = ({selectedDay, setSelectedDay, todoContext}) => {
     todoContext.todos.map((todo)=>{
         return scheduledDays.push({...todo.dueDate, className : 'scheduled'});
     })
-    console.log(scheduledDays)
 
     return (
         <Calendar

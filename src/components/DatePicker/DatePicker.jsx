@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //import "react-modern-calendar-datepicker/lib/DatePicker.css";
-import "./Datepicker.css"
+import "../../styles/Calendar-style.css"
 import DatePicker from "react-modern-calendar-datepicker";
 
 
