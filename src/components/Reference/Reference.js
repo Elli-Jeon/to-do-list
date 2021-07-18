@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const Reference = styled.div`
-    position: absolute;
-    top : 85vh;
+    margin-top : 2rem;
     display: center;
     justify-content: center;
     align-items: center;
