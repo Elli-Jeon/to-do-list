@@ -13,7 +13,7 @@ import Reference from '../../components/Reference/Reference';
 import Todo from '../../components/Todo/index' 
 
 
-const BoardPresenter = ({ todoContext, todo, todoSubmit, addTodoValue, setSelectedDay, changeSelectedDay, checkPriority} ) => {
+const BoardPresenter = ({ todoContext, todo, todoSubmit, addTodoValue, changeSelectedDay, checkPriority} ) => {
 
     return (
         <BoardSectionStyle>
@@ -30,7 +30,7 @@ const BoardPresenter = ({ todoContext, todo, todoSubmit, addTodoValue, setSelect
                     <label>할 일을 적어주세요!</label>
                     <AddTodoInput onChange={addTodoValue} value={todo} />
                     <label>마감 일을 설정해주세요!</label>
-                    <DatePicker onChange={setSelectedDay} changeSelectedDay={changeSelectedDay}/>
+                    <DatePicker changeSelectedDay={changeSelectedDay}/>
                     <AddTodoSubmitButton onClick={todoSubmit}>Add</AddTodoSubmitButton>
                 </AddTodoForm>
             </AddTodoFormContainer>

@@ -14,7 +14,10 @@ const BoardContainer = () => {
 
     const [ todo, setTodo ] = useState("");
     const [ priority, setPriority ] = useState("Check now!");
-    const [ selectedDay, setSelectedDay] = useState(null);
+    const d = new Date();
+    const defaultSelectedDay = {year : d.getFullYear(), month : d.getMonth() + 1, day : d.getDate()}
+    const [ selectedDay, setSelectedDay] = useState(defaultSelectedDay);
+    console.log(selectedDay)
 
     // AddInput의 input의 값을 todo에 저장
     const addTodoValue = (e) => {
@@ -46,7 +49,6 @@ const BoardContainer = () => {
             todo={todo}
             todoSubmit={todoSubmit}
             addTodoValue={addTodoValue}
-            setSelectedDay={setSelectedDay}
             changeSelectedDay={changeSelectedDay} 
         />
     )

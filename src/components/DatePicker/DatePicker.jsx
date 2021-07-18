@@ -30,7 +30,7 @@ const App = ({ changeSelectedDay }) => {
     />
   )
       // changeSelectedDay는 부모에서 정의되서 내려와가지고 부모의 selected day를 바꿔줌
-      // setSelectedDay는 컴포넌트 안에서만 쓸 려고 사용 input의 value 값 바꿔주기 위해
+      // setPickedDay는 컴포넌트 안에서만 쓸 려고 사용 input의 value 값 바꿔주기 위해
   const selectedDayChange = (e) => {
     setPickedDay(e);  
     changeSelectedDay(e);
