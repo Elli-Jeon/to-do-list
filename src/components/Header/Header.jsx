@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
+// Login button
+import LoginButton from '../LoginButton/LoginButton';
+
 // css
 import TotalHeaderStyle from '../../styles/Header-style';
 
@@ -23,6 +26,7 @@ const Header = () => {
                 <NavStyle>
                     <NavLink exact activeStyle={activeStyle} to="/board">To Do</NavLink>
                     <NavLink activeStyle={activeStyle} to="/calendar">Calendar</NavLink>
+                    <LoginButton />
                 </NavStyle>
             </HeaderStyle>
         </div>
