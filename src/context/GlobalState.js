@@ -7,6 +7,9 @@ import { TodoContext, initialValue } from './todoContext';
 // DispatchContext
 import dispatchContext from './dispatchContext';
 
+// LoginModalContext
+import loginModalContext, { isModalOpened } from './loginModalContext';
+
 // reducer
 import { reducer } from './reducers';
 
@@ -17,7 +20,9 @@ const GlobalState = props => {
     return (
         <TodoContext.Provider value={state}>
             <dispatchContext.Provider value={dispatch}>
-                {props.children}
+                <loginModalContext.Provider value={isModalOpened}>
+                    {props.children}
+                </loginModalContext.Provider>
             </dispatchContext.Provider>
         </TodoContext.Provider>
     );

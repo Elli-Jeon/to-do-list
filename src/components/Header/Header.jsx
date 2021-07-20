@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 // Login button
@@ -6,6 +6,9 @@ import LoginButton from '../LoginButton/LoginButton';
 
 // css
 import TotalHeaderStyle from '../../styles/Header-style';
+
+// logincontext
+import loginModalContext from '../../context/loginModalContext';
 
 const { HeaderStyle, NavStyle } = TotalHeaderStyle;
 
@@ -19,6 +22,10 @@ const activeStyle = {
 };
 
 const Header = () => {
+    const isModalOpened = useContext(loginModalContext);
+    //console.log(isModalOpened)
+
+     
     return (
         <div>
             <HeaderStyle>
@@ -26,7 +33,7 @@ const Header = () => {
                 <NavStyle>
                     <NavLink exact activeStyle={activeStyle} to="/board">To Do</NavLink>
                     <NavLink activeStyle={activeStyle} to="/calendar">Calendar</NavLink>
-                    <LoginButton />
+                    <LoginButton>LOGIN</LoginButton>
                 </NavStyle>
             </HeaderStyle>
         </div>
