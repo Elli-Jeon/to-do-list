@@ -8,7 +8,7 @@ import LoginButton from '../LoginButton/LoginButton';
 import TotalHeaderStyle from '../../styles/Header-style';
 
 // logincontext
-import loginModalContext from '../../context/loginModalContext';
+import { LoginModalContext } from '../../context/index';
 
 const { HeaderStyle, NavStyle } = TotalHeaderStyle;
 
@@ -22,9 +22,9 @@ const activeStyle = {
 };
 
 const Header = () => {
-    const isModalOpened = useContext(loginModalContext);
+    const modalContext = useContext(LoginModalContext);
     //console.log(isModalOpened)
-
+    console.log(modalContext)
      
     return (
         <div>

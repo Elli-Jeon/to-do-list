@@ -2,15 +2,15 @@ import React, { useState, useContext } from 'react'
 import BoardPresenter from './BoardPresenter'
 
 // ACTIONS & Context
-import {ACTIONS} from '../../context/actions'
-import { TodoContext } from '../../context/todoContext'
-import DispatchContext from '../../context/dispatchContext'
+import {TODO_ACTIONS} from '../../context/modules/Todo/TodoContext'
+import { TodoContext } from '../../context/index'
+import { TodoDispatchContext } from '../../context/index'
 
 
 const BoardContainer = () => {
     
     const todoContext = useContext(TodoContext);
-    const dispatch = useContext(DispatchContext); // dispatch에 바로 가져 옴. 
+    const todoDispatch = useContext(TodoDispatchContext); // dispatch에 바로 가져 옴. 
 
     const [ todo, setTodo ] = useState("");
     const [ priority, setPriority ] = useState("Check now!");
@@ -31,14 +31,14 @@ const BoardContainer = () => {
     // todo를 위로 올려 줌. 
     const todoSubmit = (e) => {
         e.preventDefault();
-        dispatch({ type : ACTIONS.TODO_SUBMIT, payload : { todo, priority, selectedDay }});
+        todoDispatch({ type : TODO_ACTIONS.TODO_SUBMIT, payload : { todo, priority, selectedDay }});
         setTodo('');
         setPriority("Check Now!");
     }
 
     const checkPriority = (e) => {
         e.preventDefault();
-        dispatch({type : ACTIONS.TODO_CHECK_PRIORITY})
+        todoDispatch({type : TODO_ACTIONS.TODO_CHECK_PRIORITY})
     }
 
     return (
