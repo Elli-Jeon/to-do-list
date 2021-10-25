@@ -6,6 +6,15 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": ".",
+    "paths": {
+      "@src/*" : [
+        "src/*"
+      ],
+      "@public/" : [
+        "public/*"
+      ]
+    },
     "allowJs": true,
     "checkJs": false,
     "outDir": "./dist",
